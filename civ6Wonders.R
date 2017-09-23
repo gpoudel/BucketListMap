@@ -17,13 +17,13 @@ civ6_map <- leaflet(wonders) %>%
   addCircleMarkers(fillOpacity = 1, 
                          label = wonders$wonder, 
                          color = ~ifelse(type == "m", "blue", "green"), 
-                         group = ~ifelse(type == "m", "Man-made", "Natural"),
-                         popup =  paste0("<a href='" ,wonders$img_qry, "' target='_blank'><img src = ", gsub(" ","",wonders$wonder), ".png> </a>")                         
+                         group = ~ifelse(type == "m", "Human-made", "Natural"),
+                         popup =  paste0("<a href='" ,wonders$img_qry, "' target='_blank'><img src = 'img/", gsub(" ","",wonders$wonder), ".png'> </a>")                         
                    )%>% 
   addLayersControl(
-    overlayGroups = c("Natural","Man-made"), 
+    overlayGroups = c("Natural","Human-made"), 
     options = layersControlOptions(collapsed = FALSE))
 
 
 
-saveWidget(widget=civ6_map, file="civ6.html")
+saveWidget(widget=civ6_map, file="index.html")
