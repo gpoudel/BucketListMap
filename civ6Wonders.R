@@ -9,7 +9,7 @@ library('htmlwidgets')
 
 wonders <- read.csv("civ6Wonders.csv", sep = ";", header = T)
 
-wonders$img_qry <- paste0("https://www.google.nl/search?tbm=isch&q=",gsub(" ","+",wonders$wonder))
+wonders$img_qry <- paste0("https://www.google.com/search?tbm=isch&q=",gsub(" ","+",wonders$wonder))
 
 
 civ6_map <- leaflet(wonders) %>% 
