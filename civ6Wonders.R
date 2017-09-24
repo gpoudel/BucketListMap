@@ -27,3 +27,4 @@ civ6_map <- leaflet(wonders) %>%
 
 
 saveWidget(widget=civ6_map, file="index.html")
+
